@@ -1,0 +1,16 @@
+*{
+  margin:0;
+  font-family: Quicksand, sans-serif;
+  color: #333;
+}
+.App{
+  text-align: center;
+}
+h1{
+  align-content: center;
+  margin: auto;
+}
+button{
+  background-color: cornflowerblue;
+  color: white;
+}
