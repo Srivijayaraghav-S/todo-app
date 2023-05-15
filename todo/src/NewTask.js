@@ -1,14 +1,33 @@
-import React,{ useState } from "react";
+import React from "react";
 const NewTask = () => {
+    // if(localStorage.getItem("tasks")===null) {
+    //     localStorage.setItem("tasks", JSON.stringify(tasks));
+    // }
+    // if(localStorage.getItem("index")===null) {
+    //     localStorage.setItem("index", 0);
+    // }
     const [index, setIndex] = React.useState(0);
+    const [tasks, setTasks] = React.useState([]);
     function submitTask() {
         console.log("Task submitted");
         let task=document.getElementById("new-task-input").value;
         console.log(task);
         let due=document.getElementById("task-due-date").value;
         console.log(due);
+        let taskObj={};
+        taskObj.task=task;
+        taskObj.dueDate=due;
+        tasks[index]=taskObj;
+        // localStorage.setItem("tasks", JSON.stringify(tasks));
         setIndex(index+1);
+        // localStorage.setItem("index", index);
+        setTasks(tasks);
+        console.log(tasks.length);
+        console.log("hello");
         console.log("index: "+index);
+        for(let i=0;i<tasks.length;i++) {
+            console.log(tasks[i]);
+        }
     }
     return ( 
         <div className="new-task">
